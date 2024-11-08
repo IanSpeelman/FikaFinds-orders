@@ -1,12 +1,8 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import { placeOrder } from "../Controllers/orderController";
 
 const router = Router()
 
-
-function test(req: Request, res: Response) {
-    res.send('hello world')
-}
-
-router.get('/', test)
+router.post('/', placeOrder)
 
 export default router
