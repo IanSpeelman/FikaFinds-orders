@@ -6,7 +6,8 @@ export class Order extends Model { }
 Order.init(
     {
         user: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     },
     {
@@ -14,7 +15,6 @@ Order.init(
         modelName: "Order"
     }
 )
-
 
 async function tableSync() {
     try {

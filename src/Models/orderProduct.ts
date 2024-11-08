@@ -7,10 +7,12 @@ export class OrderProduct extends Model { }
 OrderProduct.init(
     {
         order: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
-        Product: {
-            type: DataTypes.INTEGER
+        product: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
 
     },
