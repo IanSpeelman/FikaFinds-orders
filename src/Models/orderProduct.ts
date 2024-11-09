@@ -13,8 +13,17 @@ OrderProduct.init(
         product: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
+        },
+        amount: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
-
     },
     {
         sequelize,

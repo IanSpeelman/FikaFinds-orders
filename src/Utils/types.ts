@@ -8,6 +8,7 @@ export type orderProduct = {
     order: number,
     product: number,
     amount: number
+    price: number
 }
 
 export type orderRequest = {
@@ -18,6 +19,7 @@ export type orderRequest = {
 export type orderProductRequest = {
     amount: number,
     product: product
+    price: number
 }
 
 export type product = {
