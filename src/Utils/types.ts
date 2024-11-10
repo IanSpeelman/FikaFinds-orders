@@ -19,7 +19,7 @@ export type orderRequest = {
 export type orderProductRequest = {
     amount: number,
     product: product
-    price: number
+
 }
 
 export type product = {
