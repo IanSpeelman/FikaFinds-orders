@@ -5,7 +5,6 @@ import { orderProductRequest } from '../Utils/types'
 import verifyOrderRequest from "../Utils/verifyOrderRequest";
 
 export async function placeOrder(req: Request, res: Response) {
-
     if (verifyOrderRequest(req.body)) {
         try {
 
@@ -32,4 +31,10 @@ export async function placeOrder(req: Request, res: Response) {
         }
     }
     res.status(406).end();
+}
+
+export async function getByUserId(req: Request, res: Response) {
+    const { id } = req.params
+    const orders = await Order.findAll({ include: [{ model: OrderProduct }], where: { user: id } })
+    res.send(orders)
 }
