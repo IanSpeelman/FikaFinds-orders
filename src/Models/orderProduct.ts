@@ -1,15 +1,16 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../Utils/database";
+import { Order } from "./orderModel";
 
 
 export class OrderProduct extends Model { }
 
 OrderProduct.init(
     {
-        order: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
+        // order: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
         product: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -30,6 +31,7 @@ OrderProduct.init(
         tableName: 'OrderdProducts'
     }
 )
+Order.hasMany(OrderProduct)
 
 async function tableSync() {
     try {

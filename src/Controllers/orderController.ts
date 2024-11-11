@@ -17,7 +17,7 @@ export async function placeOrder(req: Request, res: Response) {
             const orderNumber = order.dataValues.id
             const productList = req.body.products.map((product: orderProductRequest) => {
                 return {
-                    order: orderNumber,
+                    OrderId: orderNumber,
                     product: product.product.id,
                     amount: product.amount,
                     price: product.product.price
