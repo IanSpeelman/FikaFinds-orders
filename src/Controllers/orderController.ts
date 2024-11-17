@@ -34,7 +34,15 @@ export async function placeOrder(req: Request, res: Response) {
 }
 
 export async function getByUserId(req: Request, res: Response) {
-    const { id } = req.params
-    const orders = await Order.findAll({ include: [{ model: OrderProduct }], where: { user: id } })
-    res.send(orders)
+    try {
+        const { id } = req.params
+        const orders = await Order.findAll({ include: [{ model: OrderProduct }], where: { user: id } })
+        res.send(orders)
+
+    } catch (err) {
+
+        console.log(err)
+        res.send(404).json({ err: 'no orders found for this user' })
+
+    }
 }
