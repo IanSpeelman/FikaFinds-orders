@@ -1,3 +1,5 @@
+import { JwtPayload } from "jwt-decode"
+
 export type orderType = {
     id: number,
     user: number,
@@ -34,4 +36,13 @@ export type product = {
     amount?: number,
     createdAt?: Date
     updatedAt?: Date
+}
+
+export interface jwtToken extends JwtPayload {
+    id: number,
+    admin: boolean,
+    email: string,
+    firstName: string,
+    iat: number
+    exp: number
 }
